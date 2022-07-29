@@ -216,7 +216,7 @@ const PublishFlag NO_ACK(PUBLISH_EVENT_FLAG_NO_ACK);
 const PublishFlag WITH_ACK(PUBLISH_EVENT_FLAG_WITH_ACK);
 
 
-
+void setMillis(uint32_t);
 uint32_t millis();
 
 using namespace spark;

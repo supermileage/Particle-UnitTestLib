@@ -95,10 +95,21 @@ void Logger::error(const char *fmt, ...) {
 
 const Logger Log("app");
 
-uint32_t millis() {
-    struct timespec ts;
+uint32_t g_millis = 0;
 
-    clock_gettime(CLOCK_MONOTONIC, &ts);
-
-    return (uint32_t) (uint64_t)(ts.tv_nsec / 1000000) + ((uint64_t)ts.tv_sec * 1000ull);
+void setMillis(uint32_t value) {
+	g_millis = value;
 }
+
+uint32_t millis() {
+	return g_millis;
+}
+
+// real millis
+// uint32_t millis() {
+//     struct timespec ts;
+
+//     clock_gettime(CLOCK_MONOTONIC, &ts);
+
+//     return (uint32_t) (uint64_t)(ts.tv_nsec / 1000000) + ((uint64_t)ts.tv_sec * 1000ull);
+// }
