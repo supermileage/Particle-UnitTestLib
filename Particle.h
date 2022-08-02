@@ -12,6 +12,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#include <iostream>
 #include <cassert>
 
 #include "spark_wiring_flags.h"
@@ -20,6 +21,7 @@
 #include "spark_wiring_time.h"
 #include "rng_hal.h"
 #include "system_tick_hal.h"
+#include "supermileage_fake_serial.h"
 
 using namespace spark;
 // using namespace particle;
@@ -215,9 +217,11 @@ const PublishFlag PRIVATE(PUBLISH_EVENT_FLAG_PRIVATE);
 const PublishFlag NO_ACK(PUBLISH_EVENT_FLAG_NO_ACK);
 const PublishFlag WITH_ACK(PUBLISH_EVENT_FLAG_WITH_ACK);
 
-
+// millis
 void setMillis(uint32_t);
 uint32_t millis();
+
+#define Serial FakeSerial::instance()
 
 using namespace spark;
 
