@@ -1,19 +1,18 @@
-
-
 CFLAGS=-std=c++11
 
-libwiringgcc.a : helpers.o spark_wiring_json.o jsmn.o spark_wiring_print.o spark_wiring_string.o spark_wiring_time.o time_compat.o supermileage_fake_serial.o
-	ar rcs $@ $^
-	
-	
-test1 : libwiringgcc.a
-	gcc test1.cpp $(CFLAGS) libwiringgcc.a -lc++ -o test1
-	 
-%.o: %.cpp
+CPPSRC := $(wildcard *.cpp)
+CSRC := $(wildcard *.c)
+OBJ := $(CPPSRC:.cpp=.o) $(CSRC:.c=.o)
+DEP := $(wildcard *.h)
+
+libwiringgcc.a : $(OBJ)
+	ar -crs $@ $^
+
+%.o: %.cpp $(DEP)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-%.o: %.c
+%.o: %.c $(DEP)
 	$(CC) -c -o $@ $<
 
 clean :
-	rm *.o *.a test1 libwiringcc.a || set status 0
+	rm *.o *.a libwiringcc.a || set status 0

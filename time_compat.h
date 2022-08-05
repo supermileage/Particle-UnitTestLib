@@ -18,7 +18,7 @@
 #pragma once
 
 #include <sys/types.h>
-#include <time.h>
+#include <sys/time.h>
 #include <stdint.h>
 #ifndef __cplusplus
 #include <assert.h>
