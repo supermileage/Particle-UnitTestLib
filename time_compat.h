@@ -18,7 +18,13 @@
 #pragma once
 
 #include <sys/types.h>
+
+#ifdef __linux__
 #include <time.h>
+#else
+#include <sys/time.h>
+#endif
+
 #include <stdint.h>
 #ifndef __cplusplus
 #include <assert.h>
