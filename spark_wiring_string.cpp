@@ -36,7 +36,7 @@
 //These are very crude implementations - will refine later
 //------------------------------------------------------------------------------------------
 
-void dtoa (double val, unsigned char prec, char *sout) {
+void dtoa (double val, uint16_t prec, char *sout) {
     bool negative = val<0;
     if (negative) {
         val = -val;
@@ -45,7 +45,8 @@ void dtoa (double val, unsigned char prec, char *sout) {
     long scale = 1;
     for (uint8_t i=0; i<prec; i++)
         scale *= 10;
-    val *= scale;   // capture all the significant digits
+
+	val *= scale;   // capture all the significant digits
     uint64_t fixed = uint64_t(val);
     if ((val-fixed)>=0.5)    // round last digit
         fixed++;
@@ -57,6 +58,11 @@ void dtoa (double val, unsigned char prec, char *sout) {
     if (prec) {
         sout += strlen(sout);
         *sout++ = '.';
+		int offset = prec - String(second).length();
+		while (offset && second) {
+			*sout++ = '0';
+			--offset;
+		}
         ultoa(second, sout, 10, prec);
     }
 }
