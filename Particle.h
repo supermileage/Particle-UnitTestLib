@@ -22,6 +22,7 @@
 #include "rng_hal.h"
 #include "system_tick_hal.h"
 #include "supermileage_fake_serial.h"
+#include "spark_wiring_constants.h"
 
 using namespace spark;
 // using namespace particle;
