@@ -222,7 +222,9 @@ const PublishFlag WITH_ACK(PUBLISH_EVENT_FLAG_WITH_ACK);
 void setMillis(uint32_t);
 uint32_t millis();
 
+// Serial
 #define Serial FakeSerial::instance()
+#define SERIAL_8N1 0	// definition for USART serial flag used in project
 
 using namespace spark;
 
