@@ -226,8 +226,6 @@ uint32_t millis();
 #define Serial FakeSerial::instance()
 #define Serial1 USARTSerial::instance()
 
-#define SERIAL_8N1 0	// definition for USART serial flag used in project
-
 using namespace spark;
 
 #endif /* __PARTICLE_H */
