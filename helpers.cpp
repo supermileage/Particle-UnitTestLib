@@ -96,6 +96,7 @@ void Logger::error(const char *fmt, ...) {
 const Logger Log("app");
 
 uint32_t g_millis = 0;
+uint32_t g_micros = 0;
 
 void setMillis(uint32_t value) {
 	g_millis = value;
@@ -103,6 +104,14 @@ void setMillis(uint32_t value) {
 
 uint32_t millis() {
 	return g_millis;
+}
+
+void setMicros(uint32_t value) {
+	g_micros = value;
+}
+
+uint32_t micros() {
+	return g_micros;
 }
 
 // real millis
