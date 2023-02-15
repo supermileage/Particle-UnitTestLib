@@ -1,11 +1,11 @@
 # UnitTestLib
-*Library to easily unit test parts of some Particle device code off device (native gcc compile)*
+*Library to easily unit test parts of some Arduino device code off device (native gcc compile)*
 
 
-Github Repository: https://github.com/rickkas7/UnitTestLib
+Forked From Github Repository: https://github.com/rickkas7/UnitTestLib
 License: MIT
 
-This library contains a small subset of functions available in Device OS. For example:
+This library contains a small subset of functions available in the Arduino framework. For example:
 
 - String
 - Time
@@ -50,10 +50,10 @@ libwiringgcc :
 .PHONY: libwiringgcc
 ```
 
-- Include Particle.h in your unit test C++ source
+- Include Arduino.h in your unit test C++ source
 
 ```
-#include "Particle.h"
+#include "Arduino.h"
 ```
 
 - To update the submodule if changes are made in this repository
