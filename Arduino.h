@@ -1,6 +1,6 @@
 // Dummy particle.h file for testing logdata.cpp module from gcc
-#ifndef __ARDUINO_H
-#define __ARDUINO_H
+#ifndef __ARDUINO_H_
+#define __ARDUINO_H_
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -221,11 +221,14 @@ const PublishFlag WITH_ACK(PUBLISH_EVENT_FLAG_WITH_ACK);
 void setMillis(uint32_t);
 uint32_t millis();
 
+// micros
 void setMicros(uint32_t);
 uint32_t micros();
 
+// Serial
 #define Serial FakeSerial::instance()
+#define Serial1 USARTSerial::instance()
 
 using namespace spark;
 
-#endif /* __PARTICLE_H */
+#endif /* __ARUDUINO_H_ */

@@ -3,6 +3,10 @@
 
 #include "Common.h"
 
-void pinMode(pin_size_t pin, PinMode pinMode) { }
+void pinMode(pin_size_t pin, PinMode pinMode);
+
+void setDigitalRead(PinStatus status);
+
+PinStatus digitalRead(pin_size_t pin);
 
 #endif
