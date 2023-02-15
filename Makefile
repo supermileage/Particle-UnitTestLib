@@ -5,6 +5,8 @@ CSRC := $(wildcard *.c)
 OBJ := $(CPPSRC:.cpp=.o) $(CSRC:.c=.o)
 DEP := $(wildcard *.h)
 
+
+
 libwiringgcc.a : $(OBJ)
 	ar -crs $@ $^
 

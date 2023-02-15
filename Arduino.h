@@ -1,6 +1,6 @@
 // Dummy particle.h file for testing logdata.cpp module from gcc
-#ifndef __PARTICLE_H
-#define __PARTICLE_H
+#ifndef __ARDUINO_H
+#define __ARDUINO_H
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -23,17 +23,16 @@
 #include "system_tick_hal.h"
 #include "supermileage_fake_serial.h"
 #include "spark_wiring_constants.h"
+#include "Common.h"
+#include "wiring_digital.h"
 
 using namespace spark;
-// using namespace particle;
-// using namespace std::literals::chrono_literals;
 
 class Stream {
 public:
 	inline int available() { return 0; }
 	inline int read() { return 0; }
 };
-
 
 // Doesn't actually work as we don't support threads in the gcclib, but makes it easier to compile code
 class Mutex
@@ -221,6 +220,9 @@ const PublishFlag WITH_ACK(PUBLISH_EVENT_FLAG_WITH_ACK);
 // millis
 void setMillis(uint32_t);
 uint32_t millis();
+
+void setMicros(uint32_t);
+uint32_t micros();
 
 #define Serial FakeSerial::instance()
 
