@@ -21,7 +21,7 @@ void FakeSerial::println(String msg) {
 	std::cout << msg.c_str() << std::endl;
 }
 
-void println() {
+void FakeSerial::println() {
     std::cout << std::endl;
 }
 
