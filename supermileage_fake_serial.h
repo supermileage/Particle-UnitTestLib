@@ -14,6 +14,7 @@ class FakeSerial {
 		static FakeSerial& instance();
 		void print(String msg);
 		void println(String msg);
+        void println();
 		void printf(const char* format, ...);
 	private:
 		static FakeSerial* _instance;

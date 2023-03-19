@@ -21,6 +21,10 @@ void FakeSerial::println(String msg) {
 	std::cout << msg.c_str() << std::endl;
 }
 
+void println() {
+    std::cout << std::endl;
+}
+
 void FakeSerial::printf(const char* format, ...) {
 	va_list argptr;
 	va_start(argptr, format);
