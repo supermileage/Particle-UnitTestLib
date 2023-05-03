@@ -4,14 +4,14 @@ extern "C"
 char *itoa ( int value, char * str, int base ) {
 
 	if (base == 16) {
-		sprintf(str, "%x", value);
+		snprintf(str, 33, "%x", value);
 	}
 	else
 	if (base == 8) {
-		sprintf(str, "%o", value);
+		snprintf(str, 33, "%o", value);
 	}
 	else {
-		sprintf(str, "%d", value);
+		snprintf(str, 33, "%d", value);
 	}
 
 	return str;
@@ -21,14 +21,14 @@ extern "C"
 char *utoa ( unsigned int value, char * str, int base ) {
 
 	if (base == 16) {
-		sprintf(str, "%x", value);
+		snprintf(str, 33, "%x", value);
 	}
 	else
 	if (base == 8) {
-		sprintf(str, "%o", value);
+		snprintf(str, 33, "%o", value);
 	}
 	else {
-		sprintf(str, "%u", value);
+		snprintf(str, 33, "%u", value);
 	}
 
 	return str;
@@ -38,14 +38,14 @@ extern "C"
 char *ltoa (unsigned long value, char * str, int base ) {
 
 	if (base == 16) {
-		sprintf(str, "%lx", value);
+		snprintf(str, 33, "%lx", value);
 	}
 	else
 	if (base == 8) {
-		sprintf(str, "%lo", value);
+		snprintf(str, 33, "%lo", value);
 	}
 	else {
-		sprintf(str, "%ld", value);
+		snprintf(str, 33, "%ld", value);
 	}
 
 	return str;
@@ -55,14 +55,14 @@ extern "C"
 char *ultoa (unsigned long value, char * str, int base ) {
 
 	if (base == 16) {
-		sprintf(str, "%lx", value);
+		snprintf(str, 33, "%lx", value);
 	}
 	else
 	if (base == 8) {
-		sprintf(str, "%lo", value);
+		snprintf(str, 33, "%lo", value);
 	}
 	else {
-		sprintf(str, "%lu", value);
+		snprintf(str, 33, "%lu", value);
 	}
 
 	return str;
